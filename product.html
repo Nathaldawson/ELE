@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Ele Coffee Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mini-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo green.png" alt="Ele Coffee Co. Logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wholesale.html">Large Orders</a></li>
+                <li><a href="https://elecoffeeco.mini.store/" target="_blank" class="mini-shop-btn">Shop on Mini</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" id="search-toggle"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon" id="cart-toggle"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="account-icon" id="account-toggle"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search for products..." autofocus>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-suggestions">
+                <h3>Popular Searches</h3>
+                <div class="suggestion-tags">
+                    <a href="products.html">Thakeri Coffee</a>
+                    <a href="products.html">Single Origin</a>
+                    <a href="products.html">Medium Roast</a>
+                    <a href="products.html">Brewing Equipment</a>
+                    <a href="products.html">The most expensive coffee in the world?</a>
+                    <a href="products.html">Will RCB win this year?</a>
+                </div>
+            </div>
+            <button class="close-search" id="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Mini Cart -->
+    <div class="mini-cart" id="mini-cart">
+        <div class="mini-cart-header">
+            <h3>Your Cart <span class="cart-count">0</span></h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Empty cart message -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+            
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₹0.00</span>
+            </div>
+            <a href="#" class="btn checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="account-menu">
+        <div class="account-menu-header">
+            <h3>My Account</h3>
+            <button class="close-account" id="close-account"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="account-menu-content">
+            <div class="account-login">
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Sign In</button>
+                </form>
+                <div class="account-links">
+                    <a href="#">Forgot password?</a>
+                    <a href="#">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay Background -->
+    <div class="overlay-bg" id="overlay-bg"></div>
+
+    <main>
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Home</a> &gt; 
+                <a href="products.html">Shop</a> &gt; 
+                <span id="product-name">Product Name</span>
+            </div>
+        </div>
+
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-detail-grid">
+                    <div class="product-detail-image">
+                        <div class="product-badge"> For every coffee sold, we plant a tree!</div>
+                        <div class="image-zoom-container">
+                        <img id="product-image" src="" alt="Product Image">
+                            <div class="zoom-lens"></div>
+                        </div>
+                        <div class="product-thumbnails" id="product-thumbnails">
+                            <img class="thumbnail active" src="" alt="Thumbnail 1">
+                            <img class="thumbnail" src="" alt="Thumbnail 2">
+                            <img class="thumbnail" src="" alt="Thumbnail 3">
+                        </div>
+                    </div>
+                    <div class="product-detail-info">
+                        <h1 id="product-title">Product Title</h1>
+                        <div class="product-metadata">
+                            <span id="product-origin" class="product-origin">Origin</span>
+                            <span id="product-roast" class="product-roast">Roast Level</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(99+ reviews)</span>
+                        </div>
+                        <div id="product-price" class="product-price">₹0.00</div>
+                        <p id="product-description">Product description will appear here.</p>
+                        
+                        <div class="product-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-fire"></i>
+                                <span>Freshly Roasted</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-leaf"></i>
+                                <span>Organic</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-form">
+                            <div class="product-actions">
+                                <button id="add-to-cart-btn" class="btn-primary">Add to Cart</button>
+                            </div>
+                            
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20the%20product:%20" class="whatsapp-btn whatsapp-green">
+                                <i class="fab fa-whatsapp"></i> Shop on WhatsApp
+                            </a>
+                            <a href="https://elecoffeeco.mini.store/" class="whatsapp-btn">
+                                <i class="fab fa-react"></i> Shop on Mini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-details-tabs">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="description">Description</button>
+                    <button class="tab-button" data-tab="taste-notes">Taste Notes</button>
+                    <button class="tab-button" data-tab="sustainability">Sustainability</button>
+                </div>
+                <div class="tab-content">
+                    <div id="description" class="tab-pane active">
+                        <h3>About This Coffee</h3>
+                        <p>Our signature coffee from the Thakeri region in Coorg, India is grown at an elevation of 1,200 meters, creating the perfect conditions for these exceptional beans. Shade-grown under native trees, our coffee cherries are hand-picked only when perfectly ripe, then carefully processed to preserve their unique characteristics.</p>
+                        <p>With a perfect balance of body and acidity, this coffee showcases the unique terroir of the Thakeri hills, offering a delightful cup with distinctive chocolate notes balanced by a subtle sweetness.</p>
+                    </div>
+                    <div id="taste-notes" class="tab-pane">
+                        <h3>Flavor Profile</h3>
+                        <div class="flavor-notes">
+                            <div class="flavor-note">
+                                <span class="flavor-icon">🍫</span>
+                                <span class="flavor-name">Chocolate</span>
+                            </div>
+                            <div class="flavor-note">
+                                <span class="flavor-icon">🌰</span>
+                                <span class="flavor-name">Hazelnut</span>
+                            </div>
+                            <div class="flavor-note">
+                                <span class="flavor-icon">🍯</span>
+                                <span class="flavor-name">Honey</span>
+                            </div>
+                            <div class="flavor-note">
+                                <span class="flavor-icon">🍊</span>
+                                <span class="flavor-name">Citrus</span>
+                            </div>
+                        </div>
+                        <div class="flavor-wheel">
+                            <div class="flavor-attribute">
+                                <span>Body</span>
+                                <div class="attribute-level">
+                                    <span class="level-marker" style="width: 70%"></span>
+                                </div>
+                            </div>
+                            <div class="flavor-attribute">
+                                <span>Acidity</span>
+                                <div class="attribute-level">
+                                    <span class="level-marker" style="width: 50%"></span>
+                                </div>
+                            </div>
+                            <div class="flavor-attribute">
+                                <span>Sweetness</span>
+                                <div class="attribute-level">
+                                    <span class="level-marker" style="width: 80%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sustainability" class="tab-pane">
+                        <h3>Our Commitment to Sustainability</h3>
+                        <div class="sustainability-features">
+                            <div class="sustainability-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <h4>Shade Grown</h4>
+                                <p>Our coffee grows under native trees, promoting biodiversity and creating better beans.</p>
+                            </div>
+                            <div class="sustainability-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <h4>Fair Trade</h4>
+                                <p>We pay premium prices directly to farmers, ensuring they receive fair compensation.</p>
+                            </div>
+                            <div class="sustainability-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-recycle"></i>
+                                </div>
+                                <h4>Eco-friendly Packaging</h4>
+                                <p>Our packaging is made from recycled materials and is fully compostable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-recommendations">
+            <div class="container">
+                <div class="recommendation-tabs">
+                    <button class="rec-tab active" data-rec="related">You May Also Like</button>
+                    <button class="rec-tab" data-rec="recently-viewed">Recently Viewed</button>
+                </div>
+                <div class="recommendation-content">
+                    <div id="related-products" class="rec-products active">
+                        <!-- Related products slider content -->
+                    </div>
+                    <div id="recently-viewed-products" class="rec-products">
+                        <!-- Recently viewed products content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Ele Coffee Co.</h3>
+                <p>Premium coffee beans and powder for coffee enthusiasts.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">Coffee Beans</a></li>
+                    <li><a href="products.html">Coffee Powder</a></li>
+                    <li><a href="wholesale.html">Wholesale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Ele Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="products.html" class="active">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Shop</span>
+        </a>
+        <a href="wholesale.html">
+            <i class="fas fa-store"></i>
+            <span>Wholesale</span>
+        </a>
+        <a href="about.html">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get product ID from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            // If no product ID is provided, redirect to products page
+            if (!productId) {
+                window.location.href = 'products.html';
+                return;
+            }
+            
+            // Get product data from localStorage
+            const productData = JSON.parse(localStorage.getItem('productData'));
+            
+            if (!productData) {
+                // If no product data, show placeholder or error
+                console.error('No product data found');
+                return;
+            }
+            
+            // Select appropriate image based on product name
+            let productImageSrc = productData.image;
+            
+            // If a specific image needs to be set
+            if (!productImageSrc || !productImageSrc.includes('ele')) {
+                if (productData.name.includes('50gms') && productData.name.includes('Coffee Powder')) {
+                    productImageSrc = 'images/ele (1).jpg'; // 50gms Coffee Powder
+                } else if (productData.name.includes('150gms') && productData.name.includes('Coffee Powder')) {
+                    productImageSrc = 'images/ele (15).png'; // 150gms Coffee Powder
+                } else if (productData.name.includes('300gms') && productData.name.includes('Coffee Powder')) {
+                    productImageSrc = 'images/ele (19).png'; // 300gms Coffee Powder
+                } else if (productData.name.includes('50gms') && productData.name.includes('Coffee Beans')) {
+                    productImageSrc = 'images/beans.png'; // 50gms Coffee Beans
+                } else if (productData.name.includes('150gms') && productData.name.includes('Coffee Beans')) {
+                    productImageSrc = 'images/beans 2.png'; // 150gms Coffee Beans
+                } else if (productData.name.includes('300gms') && productData.name.includes('Coffee Beans')) {
+                    productImageSrc = 'images/beans 3.png'; // 300gms Coffee Beans
+                } else if (productData.name.includes('Coffee Beans')) {
+                    productImageSrc = 'images/ele (89).png'; // Default for Coffee Beans
+                } else if (productData.name.includes('Coffee Powder')) {
+                    productImageSrc = 'images/ele (91).png'; // Default for Coffee Powder
+                }
+            }
+            
+            // Set product details
+            document.getElementById('product-title').textContent = productData.name;
+            document.getElementById('product-name').textContent = productData.name;
+            
+            const productImageElement = document.getElementById('product-image');
+            productImageElement.src = productImageSrc;
+            productImageElement.alt = productData.name;
+            
+            document.getElementById('product-price').textContent = productData.price;
+            document.getElementById('product-description').textContent = productData.description;
+            
+            if (productData.origin) {
+                document.getElementById('product-origin').textContent = productData.origin;
+            }
+            
+            if (productData.roast) {
+                document.getElementById('product-roast').textContent = productData.roast;
+            }
+            
+            // Set thumbnail images
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const thumbnailsContainer = document.getElementById('product-thumbnails');
+            
+            // Hide thumbnails for 50gms coffee powder product
+            if (productData.name && productData.name.includes('50gms') && productData.name.includes('Coffee Powder')) {
+                if (thumbnailsContainer) {
+                    thumbnailsContainer.style.display = 'none';
+                }
+            } else if (thumbnails.length > 0) {
+                // Generate different image variations for thumbnails
+                const baseImagePath = productImageSrc.substring(0, productImageSrc.lastIndexOf('.'));
+                const imageExtension = productImageSrc.substring(productImageSrc.lastIndexOf('.'));
+                
+                // Use different images for thumbnails based on product type
+                let alternativeImages = [];
+                
+                if (productData.name && productData.name.includes('Coffee Powder')) {
+                    // Coffee Powder thumbnails
+                    if (productData.name.includes('50gms')) {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/ele (1).jpg',
+                            'images/ele (15).png'
+                        ];
+                    } else if (productData.name.includes('150gms')) {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/ele (15).png',
+                            'images/ele (19).png'
+                        ];
+                    } else if (productData.name.includes('300gms')) {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/ele (19).png',
+                            'images/ele (91).png'
+                        ];
+                    } else {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/ele (15).png',
+                            'images/ele (91).png'
+                        ];
+                    }
+                } else if (productData.name && productData.name.includes('Coffee Beans')) {
+                    // Coffee Beans thumbnails
+                    if (productData.name.includes('50gms')) {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/beans.png',
+                            'images/beans 2.png'
+                        ];
+                    } else if (productData.name.includes('150gms')) {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/beans 2.png',
+                            'images/beans 3.png'
+                        ];
+                    } else if (productData.name.includes('300gms')) {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/beans 3.png',
+                            'images/ele (89).png'
+                        ];
+                    } else {
+                        alternativeImages = [
+                            productImageSrc,
+                            'images/ele (89).png',
+                            'images/beans.png'
+                        ];
+                    }
+                } else {
+                    // Default fallback
+                    alternativeImages = [
+                        productImageSrc,
+                        'images/ele (94).png',
+                        'images/ele (93).png'
+                    ];
+                }
+                
+                // Set the thumbnails with the alternative images
+                thumbnails.forEach((thumbnail, index) => {
+                    // For 300gms Coffee Powder, only show 2 thumbnails
+                    if (productData.name && productData.name.includes('300gms') && productData.name.includes('Coffee Powder')) {
+                        if (index === 2) {
+                            thumbnail.style.display = 'none';
+                            return;
+                        }
+                    }
+                    
+                    if (index < alternativeImages.length) {
+                        thumbnail.src = alternativeImages[index];
+                        thumbnail.alt = `${productData.name} View ${index + 1}`;
+                    }
+                });
+                
+                // Set the first thumbnail as active
+                thumbnails[0].classList.add('active');
+                
+                // Click event for thumbnails
+                thumbnails.forEach(thumb => {
+                    thumb.addEventListener('click', function() {
+                        thumbnails.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        productImageElement.src = this.src;
+                    });
+                });
+            }
+            
+            // Add to cart button
+            const addToCartBtn = document.getElementById('add-to-cart-btn');
+            
+            addToCartBtn.addEventListener('click', function() {
+                addToCart(false); // false means do not proceed to checkout
+            });
+            
+            function addToCart(proceedToCheckout) {
+                // Default quantity to 1 since quantity selector was removed
+                const quantity = 1;
+                
+                // Create cart item
+                const cartItem = {
+                    id: productId,
+                    name: productData.name,
+                    price: productData.price,
+                    image: productImageSrc,
+                    quantity: quantity
+                };
+                
+                // Get existing cart items from localStorage
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                
+                // Check if product already exists in cart
+                const existingItemIndex = cartItems.findIndex(item => 
+                    item.id === cartItem.id
+                );
+                
+                if (existingItemIndex !== -1) {
+                    // Update quantity if item exists
+                    cartItems[existingItemIndex].quantity += quantity;
+                } else {
+                    // Add new item if it doesn't exist
+                    cartItems.push(cartItem);
+                }
+                
+                // Save updated cart to localStorage
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                
+                // Show notification if not proceeding to checkout
+                if (!proceedToCheckout) {
+                const notification = document.createElement('div');
+                notification.classList.add('notification');
+                notification.textContent = `${quantity} ${productData.name} added to cart!`;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('visible');
+                }, 10);
+                
+                setTimeout(() => {
+                    notification.classList.remove('visible');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+                
+                // Update cart count
+                const cartCount = document.querySelectorAll('.cart-count');
+                const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+                cartCount.forEach(el => {
+                    el.textContent = totalItems;
+                });
+                
+                // Open mini cart
+                const miniCart = document.getElementById('mini-cart');
+                const overlayBg = document.getElementById('overlay-bg');
+                if (miniCart && overlayBg) {
+                    miniCart.classList.add('active');
+                    overlayBg.classList.add('active');
+                }
+                } else {
+                    // Proceed to checkout page
+                    window.location.href = 'checkout.html';
+                }
+            }
+
+            // Image zoom functionality
+            const zoomContainer = document.querySelector('.image-zoom-container');
+            const zoomLens = document.querySelector('.zoom-lens');
+
+            if (zoomContainer && productImageElement && zoomLens) {
+                zoomContainer.addEventListener('mousemove', function(e) {
+                    // Get position of mouse
+                    const pos = getCursorPos(e);
+                    
+                    // Calculate position of lens
+                    let x = pos.x - (zoomLens.offsetWidth / 2);
+                    let y = pos.y - (zoomLens.offsetHeight / 2);
+                    
+                    // Prevent lens from being positioned outside the image
+                    if (x > productImageElement.width - zoomLens.offsetWidth) {
+                        x = productImageElement.width - zoomLens.offsetWidth;
+                    }
+                    if (x < 0) {x = 0;}
+                    if (y > productImageElement.height - zoomLens.offsetHeight) {
+                        y = productImageElement.height - zoomLens.offsetHeight;
+                    }
+                    if (y < 0) {y = 0;}
+                    
+                    // Set position of lens
+                    zoomLens.style.left = x + "px";
+                    zoomLens.style.top = y + "px";
+                    zoomLens.style.opacity = 1;
+                    
+                    // Function to get cursor position
+                    function getCursorPos(e) {
+                        let a, x = 0, y = 0;
+                        e = e || window.event;
+                        a = productImageElement.getBoundingClientRect();
+                        x = e.pageX - a.left - window.pageXOffset;
+                        y = e.pageY - a.top - window.pageYOffset;
+                        return {x : x, y : y};
+                    }
+                });
+                
+                zoomContainer.addEventListener('mouseleave', function() {
+                    zoomLens.style.opacity = 0;
+                });
+            }
+
+            // Subscription toggle
+            const subscriptionCheckbox = document.getElementById('subscription');
+            const subscriptionDetails = document.querySelector('.subscription-details');
+
+            if (subscriptionCheckbox && subscriptionDetails) {
+                // Initially hide subscription details
+                subscriptionDetails.style.display = 'none';
+                
+                subscriptionCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        subscriptionDetails.style.display = 'block';
+                        // Apply subscription discount to price
+                        const originalPrice = parseFloat(productData.price.replace('₹', ''));
+                        const discountedPrice = (originalPrice * 0.9).toFixed(2); // 10% discount
+                        document.getElementById('product-price').textContent = `₹${discountedPrice}`;
+                    } else {
+                        subscriptionDetails.style.display = 'none';
+                        // Restore original price
+                        document.getElementById('product-price').textContent = productData.price;
+                    }
+                });
+            }
+
+            // Recently viewed products tracking
+            function trackViewedProduct(productId, productData) {
+                let recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed')) || [];
+                
+                // Remove if already exists (to move it to the front)
+                recentlyViewed = recentlyViewed.filter(item => item.id !== productId);
+                
+                // Add to front of array
+                recentlyViewed.unshift({
+                    id: productId,
+                    name: productData.name,
+                    image: productImageSrc,
+                    price: productData.price
+                });
+                
+                // Keep only last 6 viewed products
+                recentlyViewed = recentlyViewed.slice(0, 6);
+                
+                localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
+            }
+
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    const tabElement = document.getElementById(tabId);
+                    if (tabElement) {
+                        tabElement.classList.add('active');
+                    }
+                });
+            });
+
+            // Call this function when page loads
+            trackViewedProduct(productId, productData);
+
+            // Recommendation tabs functionality
+            const recTabs = document.querySelectorAll('.rec-tab');
+            const recContents = document.querySelectorAll('.rec-products');
+            
+            recTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    recTabs.forEach(t => t.classList.remove('active'));
+                    recContents.forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    const contentId = this.getAttribute('data-rec');
+                    document.getElementById(contentId + '-products').classList.add('active');
+                });
+            });
+            
+            // Populate recommendations
+            function populateRecommendations() {
+                // Sample coffee products for "You May Also Like"
+                const relatedProducts = [
+                    {
+                        id: 'rel1',
+                        name: 'Ele AAA Coffee Beans - 150gms',
+                        image: 'images/beans 2.png',
+                        price: '₹240'
+                    },
+                    {
+                        id: 'rel2',
+                        name: 'Ele Organic Coffee Powder - 50gms',
+                        image: 'images/ele (1).jpg',
+                        price: '₹99'
+                    },
+                    {
+                        id: 'rel3',
+                        name: 'Ele Organic Coffee Powder - 300gms',
+                        image: 'images/ele (19).png',
+                        price: '₹500'
+                    },
+                    {
+                        id: 'rel4',
+                        name: 'Ele AAA Coffee Beans - 50gms',
+                        image: 'images/beans.png',
+                        price: '₹90'
+                    }
+                ];
+                
+                // Get recently viewed products from localStorage
+                const recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed')) || [];
+                
+                // Function to create product card HTML
+                function createProductCard(product) {
+                    return `
+                        <div class="product-card" data-id="${product.id}">
+                            <div class="product-image">
+                                <img src="${product.image}" alt="${product.name}">
+                                ${parseInt(product.price.replace('₹', '')) > 300 ? 
+                                '<div class="free-shipping-badge">Free Shipping</div>' : ''}
+                            </div>
+                            <div class="product-info">
+                                <h3>${product.name}</h3>
+                                <div class="product-price">${product.price}</div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Populate related products
+                const relatedContainer = document.getElementById('related-products');
+                if (relatedContainer) {
+                    relatedContainer.innerHTML = relatedProducts.map(product => createProductCard(product)).join('');
+                }
+                
+                // Populate recently viewed products
+                const recentlyViewedContainer = document.getElementById('recently-viewed-products');
+                if (recentlyViewedContainer) {
+                    if (recentlyViewed.length > 0) {
+                        recentlyViewedContainer.innerHTML = recentlyViewed
+                            .filter(product => product.id !== productId) // Don't show current product
+                            .slice(0, 4) // Limit to 4 products
+                            .map(product => createProductCard(product))
+                            .join('');
+                    } else {
+                        recentlyViewedContainer.innerHTML = '<p class="no-products">No recently viewed products</p>';
+                    }
+                }
+                
+                // Add click events to the product cards
+                document.querySelectorAll('.recommendation-content .product-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        window.location.href = `product.html?id=${id}`;
+                    });
+                    
+                    // Add to cart functionality
+                    const addToCartBtn = card.querySelector('.add-to-cart');
+                    addToCartBtn.addEventListener('click', function(e) {
+                        e.stopPropagation(); // Prevent navigation to product page
+                        
+                        const productCard = this.closest('.product-card');
+                        const productId = productCard.getAttribute('data-id');
+                        const productName = productCard.querySelector('h3').textContent;
+                        const productPrice = productCard.querySelector('.product-price').textContent;
+                        const productImage = productCard.querySelector('.product-image img').src;
+                        
+                        // Add to cart logic
+                        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                        
+                        // Check if product already exists in cart
+                        const existingItemIndex = cartItems.findIndex(item => item.id === productId);
+                        
+                        if (existingItemIndex !== -1) {
+                            // Update quantity if item exists
+                            cartItems[existingItemIndex].quantity += 1;
+                        } else {
+                            // Add new item if it doesn't exist
+                            cartItems.push({
+                                id: productId,
+                                name: productName,
+                                price: productPrice,
+                                image: productImage,
+                                quantity: 1
+                            });
+                        }
+                        
+                        // Save updated cart to localStorage
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        
+                        // Update cart count
+                        const cartCount = document.querySelectorAll('.cart-count');
+                        const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+                        cartCount.forEach(el => {
+                            el.textContent = totalItems;
+                        });
+                        
+                        // Show notification
+                        const notification = document.createElement('div');
+                        notification.classList.add('notification');
+                        notification.textContent = `${productName} added to cart!`;
+                        document.body.appendChild(notification);
+                        
+                        setTimeout(() => {
+                            notification.classList.add('visible');
+                        }, 10);
+                        
+                        setTimeout(() => {
+                            notification.classList.remove('visible');
+                            setTimeout(() => {
+                                document.body.removeChild(notification);
+                            }, 300);
+                        }, 3000);
+                    });
+                });
+            }
+            
+            // Call the function to populate recommendations
+            populateRecommendations();
+
+            // Share button functionality
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const platform = this.getAttribute('data-platform');
+                    const url = window.location.href;
+                    const title = document.getElementById('product-title').textContent;
+                    const description = document.getElementById('product-description').textContent;
+                    
+                    // Create the share URLs for different platforms
+                    let shareUrl;
+                    
+                    switch(platform) {
+                        case 'facebook':
+                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                            window.open(shareUrl, '_blank', 'width=600,height=400');
+                            break;
+                            
+                        case 'twitter':
+                            shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+                            window.open(shareUrl, '_blank', 'width=600,height=400');
+                            break;
+                            
+                        case 'whatsapp':
+                            shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' - ' + url)}`;
+                            window.open(shareUrl, '_blank');
+                            break;
+                            
+                        case 'copy':
+                            // Copy URL to clipboard
+                            navigator.clipboard.writeText(url).then(() => {
+                                // Visual feedback
+                                this.classList.add('copied');
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'Copied!';
+                                
+                                // Reset after 2 seconds
+                                setTimeout(() => {
+                                    this.classList.remove('copied');
+                                    this.querySelector('span').textContent = originalText;
+                                }, 2000);
+                            }).catch(err => {
+                                console.error('Could not copy text: ', err);
+                                // Fallback for browsers that don't support clipboard API
+                                const textArea = document.createElement('textarea');
+                                textArea.value = url;
+                                document.body.appendChild(textArea);
+                                textArea.select();
+                                document.execCommand('copy');
+                                document.body.removeChild(textArea);
+                                
+                                // Visual feedback
+                                this.classList.add('copied');
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'Copied!';
+                                
+                                // Reset after 2 seconds
+                                setTimeout(() => {
+                                    this.classList.remove('copied');
+                                    this.querySelector('span').textContent = originalText;
+                                }, 2000);
+                            });
+                            break;
+                    }
+                });
+            });
+
+            // Collapsible sections for mobile
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.toggle-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.querySelector('.toggle-icon').textContent = '-';
+                    }
+                });
+            });
+
+            // Detect mobile devices and simplify UI
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                // Simplify the zoom functionality for touch devices
+                const zoomContainer = document.querySelector('.image-zoom-container');
+                if (zoomContainer) {
+                    zoomContainer.addEventListener('touchstart', function() {
+                        // Show a simplified zoom or enlarge image on touch
+                        const img = this.querySelector('img');
+                        if (img) {
+                            img.classList.toggle('enlarged');
+                        }
+                    });
+                }
+                
+                // Add swipe gestures for thumbnails
+                const thumbnailContainer = document.querySelector('.product-thumbnails');
+                if (thumbnailContainer) {
+                    let startX, endX;
+                    thumbnailContainer.addEventListener('touchstart', function(e) {
+                        startX = e.touches[0].clientX;
+                    });
+                    thumbnailContainer.addEventListener('touchend', function(e) {
+                        endX = e.changedTouches[0].clientX;
+                        if (startX - endX > 50) {
+                            // Swipe left - scroll right
+                            this.scrollLeft += 100;
+                        } else if (endX - startX > 50) {
+                            // Swipe right - scroll left
+                            this.scrollLeft -= 100;
+                        }
+                    });
+                }
+            }
+
+            // Function to toggle between in-stock and out-of-stock views
+            function toggleStockStatus(inStock) {
+                const inStockPanel = document.querySelector('.in-stock-panel');
+                const outOfStockPanel = document.querySelector('.out-of-stock-panel');
+                
+                if (inStock) {
+                    inStockPanel.style.display = 'block';
+                    outOfStockPanel.style.display = 'none';
+                } else {
+                    inStockPanel.style.display = 'none';
+                    outOfStockPanel.style.display = 'block';
+                }
+            }
+
+            // Example usage (you can call this based on your stock data)
+            // toggleStockStatus(true); // For in-stock items
+            // toggleStockStatus(false); // For out-of-stock items
+        });
+    </script>
+
+    <!-- Add schema.org markup for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Ele Organic Coffee Powder",
+      "image": "images/ele (15).jpg",
+      "description": "Medium Roast, Fruity flavor with dark caramel notes",
+      "brand": {
+        "@type": "Brand",
+        "name": "Ele Coffee Co."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.yoursite.com/product.html?id=123",
+        "priceCurrency": "INR",
+        "price": "270",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+</body>
+</html> 

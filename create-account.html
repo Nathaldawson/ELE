@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Ele Coffee Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo green.png" alt="Ele Coffee Co. Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wholesale.html">Large Orders</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" id="search-toggle"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon" id="cart-toggle"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="account-icon" id="account-toggle"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search for products..." autofocus>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-suggestions">
+                <h3>Popular Searches</h3>
+                <div class="suggestion-tags">
+                    <a href="products.html">Thakeri Coffee</a>
+                    <a href="products.html">Single Origin</a>
+                    <a href="products.html">Medium Roast</a>
+                    <a href="products.html">Brewing Equipment</a>
+                    <a href="products.html">Gift Sets</a>
+                </div>
+            </div>
+            <button class="close-search" id="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Mini Cart -->
+    <div class="mini-cart" id="mini-cart">
+        <div class="mini-cart-header">
+            <h3>Your Cart <span class="cart-count">0</span></h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Empty cart message -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+            
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₹0.00</span>
+            </div>
+            <a href="#" class="btn checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="account-menu">
+        <div class="account-menu-header">
+            <h3>My Account</h3>
+            <button class="close-account" id="close-account"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="account-menu-content">
+            <div class="account-login">
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Sign In</button>
+                </form>
+                <div class="account-links">
+                    <a href="#">Forgot password?</a>
+                    <a href="create-account.html">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay Background -->
+    <div class="overlay-bg" id="overlay-bg"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>Create Account</h1>
+                <p>Join the Ele Coffee family and enjoy exclusive benefits</p>
+            </div>
+        </section>
+
+        <section class="create-account-section">
+            <div class="container">
+                <div class="registration-container">
+                    <div class="account-benefits">
+                        <h2>Benefits of Having an Account</h2>
+                        <ul>
+                            <li>
+                                <i class="fas fa-history"></i>
+                                <span>Track your order history and status</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-address-card"></i>
+                                <span>Save your shipping and billing addresses</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-percentage"></i>
+                                <span>Access to exclusive discounts and offers</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-heart"></i>
+                                <span>Save your favorite products to purchase later</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-tree"></i>
+                                <span>Track your contribution to our tree planting initiatives</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="registration-form-container">
+                        <form id="registration-form" class="registration-form">
+                            <div class="form-title">
+                                <h3>Create Your Account</h3>
+                                <p>Fill in the details below to get started</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-email">Email Address</label>
+                                <input type="email" id="register-email" name="email" placeholder="Enter your email address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-password">Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+                                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-strength">
+                                    <div class="strength-meter">
+                                        <div class="strength-meter-fill" data-strength="0"></div>
+                                    </div>
+                                    <span class="strength-text">Password strength: <span id="strength-value">Weak</span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-match-message" id="password-match-message"></div>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="privacy-link">Privacy Policy</a></label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter for updates and exclusive offers</label>
+                            </div>
+                            <button type="submit" class="btn btn-block create-account-btn">Create Account</button>
+                            <div class="form-footer">
+                                <p>Already have an account? <a href="#" id="open-login">Sign In</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Ele Coffee Co.</h3>
+                    <p>Premium coffee beans and powder for coffee enthusiasts.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="products.html">Coffee Beans</a></li>
+                        <li><a href="products.html">Coffee Powder</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ele Coffee Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="products.html">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Shop</span>
+        </a>
+        <a href="wholesale.html">
+            <i class="fas fa-store"></i>
+            <span>Wholesale</span>
+        </a>
+        <a href="about.html">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Toggle password visibility
+        const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+        togglePasswordButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const passwordInput = this.previousElementSibling;
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle eye icon
+                const eyeIcon = this.querySelector('i');
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+        });
+        
+        // Password strength meter
+        const passwordInput = document.getElementById('register-password');
+        const strengthMeter = document.querySelector('.strength-meter-fill');
+        const strengthValue = document.getElementById('strength-value');
+        
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            
+            // Check length
+            if (password.length >= 8) strength += 1;
+            
+            // Check for numbers
+            if (/\d/.test(password)) strength += 1;
+            
+            // Check for uppercase letters
+            if (/[A-Z]/.test(password)) strength += 1;
+            
+            // Check for special characters
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+            
+            // Update strength meter
+            strengthMeter.setAttribute('data-strength', strength);
+            
+            // Update strength text
+            const strengthLabels = ['Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+            strengthValue.textContent = strengthLabels[strength];
+            
+            // Update color
+            const colors = ['#ff3860', '#ffdd57', '#ffdd57', '#23d160', '#23d160'];
+            strengthMeter.style.width = `${(strength + 1) * 20}%`;
+            strengthMeter.style.backgroundColor = colors[strength];
+        });
+        
+        // Check if passwords match
+        const confirmPassword = document.getElementById('confirm-password');
+        const matchMessage = document.getElementById('password-match-message');
+        
+        function checkPasswordMatch() {
+            if (confirmPassword.value === '') {
+                matchMessage.textContent = '';
+                matchMessage.classList.remove('match', 'no-match');
+            } else if (confirmPassword.value === passwordInput.value) {
+                matchMessage.textContent = 'Passwords match!';
+                matchMessage.classList.add('match');
+                matchMessage.classList.remove('no-match');
+            } else {
+                matchMessage.textContent = 'Passwords do not match!';
+                matchMessage.classList.add('no-match');
+                matchMessage.classList.remove('match');
+            }
+        }
+        
+        passwordInput.addEventListener('input', checkPasswordMatch);
+        confirmPassword.addEventListener('input', checkPasswordMatch);
+        
+        // Form submission
+        const registrationForm = document.getElementById('registration-form');
+        
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate form data
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = passwordInput.value;
+            const confirmPasswordValue = confirmPassword.value;
+            const termsAccepted = document.getElementById('terms').checked;
+            const newsletterSubscribed = document.getElementById('newsletter').checked;
+            
+            // Basic validation
+            if (!fullName || !email || !password || !confirmPasswordValue) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (password !== confirmPasswordValue) {
+                alert('Passwords do not match.');
+                return;
+            }
+            
+            if (!termsAccepted) {
+                alert('You must accept the Terms and Conditions to create an account.');
+                return;
+            }
+            
+            // Create user data object
+            const userData = {
+                fullName,
+                email,
+                password,
+                newsletterSubscribed,
+                dateCreated: new Date().toISOString()
+            };
+            
+            // Save to localStorage (in a real app, this would be sent to a server)
+            const users = JSON.parse(localStorage.getItem('eleUsers') || '[]');
+            
+            // Check if email already exists
+            const userExists = users.some(user => user.email === email);
+            if (userExists) {
+                alert('An account with this email already exists. Please sign in.');
+                return;
+            }
+            
+            // Add new user
+            users.push(userData);
+            localStorage.setItem('eleUsers', JSON.stringify(users));
+            
+            // Set current user
+            localStorage.setItem('eleCurrentUser', JSON.stringify({
+                fullName,
+                email,
+                loggedIn: true
+            }));
+            
+            // Show success message
+            alert('Account created successfully! Welcome to Ele Coffee Co.');
+            
+            // Redirect to home page
+            window.location.href = 'index.html';
+        });
+        
+        // Open login popup
+        document.getElementById('open-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Close any open overlays
+            document.getElementById('overlay-bg').classList.add('active');
+            
+            // Open account menu
+            document.getElementById('account-menu').classList.add('active');
+        });
+    </script>
+</body>
+</html> 

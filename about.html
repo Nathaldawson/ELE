@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ele Coffee Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mini-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo green.png" alt="Ele Coffee Co. Logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wholesale.html">Large Orders</a></li>
+                <li><a href="https://elecoffeeco.mini.store/" target="_blank" class="mini-shop-btn">Shop on Mini</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" id="search-toggle"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon" id="cart-toggle"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="account-icon" id="account-toggle"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search for products..." autofocus>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-suggestions">
+                <h3>Popular Searches</h3>
+                <div class="suggestion-tags">
+                    <a href="products.html">Thakeri Coffee</a>
+                    <a href="products.html">Single Origin</a>
+                    <a href="products.html">Medium Roast</a>
+                    <a href="products.html">Brewing Equipment</a>
+                    <a href="products.html">Gift Sets</a>
+                </div>
+            </div>
+            <button class="close-search" id="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Mini Cart -->
+    <div class="mini-cart" id="mini-cart">
+        <div class="mini-cart-header">
+            <h3>Your Cart <span class="cart-count">0</span></h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Empty cart message -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+            
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₹0.00</span>
+            </div>
+            <a href="#" class="btn checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="account-menu">
+        <div class="account-menu-header">
+            <h3>My Account</h3>
+            <button class="close-account" id="close-account"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="account-menu-content">
+            <div class="account-login">
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Sign In</button>
+                </form>
+                <div class="account-links">
+                    <a href="#">Forgot password?</a>
+                    <a href="create-account.html">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay Background -->
+    <div class="overlay-bg" id="overlay-bg"></div>
+
+    <main>
+        <section class="page-header about-header">
+            <div class="page-header-content">
+                <h1>Our Story</h1>
+                <p>Discover the passion behind Ele Coffee Company.</p>
+            </div>
+        </section>
+
+        <section class="story-banner">
+            <div class="container">
+                <div class="story-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <blockquote>
+                        "It's not because things are difficult that we dare not venture. It's because we dare not venture that they are difficult."
+                        <cite>- Lucius Annaeus Seneca</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-intro" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <div class="about-intro-content">
+                    <h2>Farm to Cup</h2>
+                    <p>Since our inception in 2024, Ele Coffee Company has been on a mission to revolutionize the coffee experience—one ethically sourced, sustainably grown, and impeccably roasted bean at a time. What began as a humble roasting operation in a garage has evolved into a vertically integrated enterprise that crafts every cup of coffee with precision, passion, and purpose.</p>
+                    <p>At the core of our brand lies a commitment to quality that transcends the ordinary. Every step of our process, from nurturing our beans on the lush, biodiverse soils of Coorg to the artful roasting techniques perfected in our state-of-the-art facility, is designed to deliver not just a beverage, but a full sensory experience. We're not just in the coffee business—we're in the business of creating moments of inspiration and connection.</p>
+                    <p>Our sustainable practices are as integral to our identity as our rich flavor profiles. By cultivating our own coffee on a 2-acre farm in Thakeri, we ensure that every bean is grown with care and respect for the environment. In true corporate synergy, our operational model includes planting a tree for every purchase, reinvesting in the community, and dedicating 15% of our revenue to support local farmers. This is our way of aligning business growth with global stewardship—because great coffee should do more than just wake you up; it should make the world a better place.</p>
+                    <p>Innovation and tradition go hand in hand at Ele Coffee Company. Our team of dedicated coffee experts, seasoned farmers, and forward-thinking innovators work in concert to blend age-old farming wisdom with modern sustainability practices. The result? A cup of coffee that not only satisfies your palate but also reinforces our commitment to ethical trade and environmental responsibility.</p>
+                    <p>In every sip, you experience the journey from farm to cup—a journey that is as meaningful as it is delicious. We invite you to join us in celebrating a new era of coffee that's as refreshing as it is responsible. Welcome to Ele Coffee Company, where every brew is a bold statement of quality, community, and a brighter, greener future.</p>
+                </div>
+                <div class="about-intro-image">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ele Coffee Founders">
+                </div>
+            </div>
+        </section>
+
+        <section class="company-timeline" data-aos="fade-up">
+            <div class="container">
+                <h2>Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-milestone" data-aos="fade-right" data-aos-delay="100">
+                        <div class="milestone-year">1940s</div>
+                        <div class="milestone-content">
+                            <h3>Where It All Began</h3>
+                            <p>Our first ancestorial coffee estate was established in the 1940s by a group of coffee farmers in Coorg, Karnataka. The estate was initially a small plot of land that was used to grow coffee beans.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-milestone" data-aos="fade-left" data-aos-delay="200">
+                        <div class="milestone-year">2000s</div>
+                        <div class="milestone-content">
+                            <h3>The Next Generation</h3>
+                            <p>The estate was passed down to the next generation of farmers, who continued to grow coffee beans on the land.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-milestone" data-aos="fade-right" data-aos-delay="300">
+                        <div class="milestone-year">2010s</div>
+                        <div class="milestone-content">
+                            <h3>Wholesale and Export</h3>
+                            <p>The estate was expanded to include more land and a larger workforce, and the coffee beans were sold to international markets.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-milestone" data-aos="fade-left" data-aos-delay="400">
+                        <div class="milestone-year">2024</div>
+                        <div class="milestone-content">
+                            <h3>Online Store Launch</h3>
+                            <p>We launched our online store to sell our premium coffee that we usually export internationally to coffee enthusiasts in India.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-milestone" data-aos="fade-right" data-aos-delay="500">
+                        <div class="milestone-year">Today</div>
+                        <div class="milestone-content">
+                            <h3>Growing Strong</h3>
+                            <p>Continuing to expand our sustainable practices and product range while staying true to our core values.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-values" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Sustainability</h3>
+                        <p>We believe in environmentally responsible practices at every stage of production. From supporting sustainable farming methods to using eco-friendly packaging, we're committed to minimizing our environmental footprint.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Ethical Sourcing</h3>
+                        <p>We work directly with farmers and cooperatives to ensure fair prices for their crops. By building long-term relationships with our growers, we help create sustainable livelihoods for coffee farming communities.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Quality</h3>
+                        <p>We're obsessed with quality at every step. From selecting the finest beans to our meticulous roasting process, we never compromise on delivering the best possible coffee experience.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>Coffee brings people together. We're dedicated to fostering community both locally and globally—supporting the regions where our coffee is grown and creating gathering spaces where people can connect.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-process">
+            <div class="container">
+                <h2>Our Process</h2>
+                <div class="process-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Sourcing</h3>
+                            <p>We source our coffee beans from small-scale organic farms locally in Coorg, Karnataka. Our coffee is cross-pollinated and grown without the use of pesticides or synthetic fertilizers, ensuring a pure and natural flavor.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Roasting</h3>
+                            <p>Our master roasters use a combination of art and science to develop unique roast profiles that highlight each coffee's inherent characteristics. We roast in small batches to ensure consistency and freshness.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Testing</h3>
+                            <p>Each batch undergoes cupping (tasting) by our quality control team to ensure it meets our flavor standards. We never ship coffee that doesn't pass our rigorous taste tests.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Packaging</h3>
+                            <p>We package our coffee in environmentally friendly bags with one-way valves to preserve freshness while minimizing environmental impact. Each bag is marked with the roast date so you know exactly when your coffee was prepared.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Brewing</h3>
+                            <p>We provide brewing guides and customer support to help you get the perfect cup every time. Because the journey doesn't end when the coffee leaves our hands—it ends with your perfect brew.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="our-impact" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title">Our Impact <span class="subtitle">Making a difference with every cup</span></h2>
+                
+                <div class="impact-grid">
+                    <!-- Environmental Impact -->
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Environmental Stewardship</h3>
+                        <div class="impact-metric">
+                            <div class="metric-number">
+                                <span class="counter">109</span><span class="symbol">+</span>
+                            </div>
+                            <div class="metric-label">Trees Planted</div>
+                        </div>
+                        <p>For every purchase, we plant a tree to combat deforestation, support biodiversity, and promote a healthier planet.</p>
+                        <ul class="impact-list">
+                            <li>Shade-grown methods protect local ecosystems</li>
+                            <li>Renewable energy powered roastery</li>
+                            <li>Compostable packaging materials</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Social Impact -->
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Community Investment</h3>
+                        <div class="impact-metric">
+                            <div class="metric-number">
+                                <span class="counter">₹5000</span><span class="symbol">+</span>
+                            </div>
+                            <div class="metric-label">Donated to Programs</div>
+                        </div>
+                        <p>We dedicate 15% of our revenue to supporting local children with essential nutrition and education, as well as assisting farmers in need.</p>
+                        <ul class="impact-list">
+                            <li>Educational initiatives in coffee-growing regions</li>
+                            <li>Technical assistance for sustainable farming</li>
+                            <li>Coffee education workshops in local communities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say About Us</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="stars">★★★★★</div>
+                        <p>"Ele coffee is one of the most incredible filter coffee powders I have encountered. It is extremely good and the taste feels just perfect for a refreshing coffee either at evening or in the morning. What sets it apart I feel is the quantity of coffee powder you receive for the price which is incredibly amazing. Introduced by my friend Ishani, I can't help but returning to the coffee due to its flavor and taste along with the helpful nature of the people involved with transportation and how much they try to ensure our own convenience before delivery. If you are looking for a value for money filter coffee, ele coffee is a must buy!"</p>
+                        <div class="customer-name">- Prince</div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stars">★★★★★</div>
+                        <p>"Started having ELE coffee a while back and it's safe to say it is HONESTLY the best coffee powder out there!! I would highly recommend ELE coffee as it is not only fresh and rejuvenating but it is farm to cup! Which makes it amazing and it smells so good!! I love how it is committed to be sustainable and also helps the local community. Get your ELE coffee before it's over."</p>
+                        <div class="customer-name">- Akshay Paul</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Join Us on Our Journey</h2>
+                <p>Every cup of Ele Coffee helps support sustainable farming practices and fair wages for coffee growers. Experience the difference that responsible sourcing and careful roasting can make.</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="btn">Shop Our Coffee</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Ele Coffee Co.</h3>
+                <p>Premium coffee beans and powder for coffee enthusiasts.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">Coffee Beans</a></li>
+                    <li><a href="products.html">Coffee Powder</a></li>
+                    <li><a href="wholesale.html">Wholesale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Ele Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="products.html">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Shop</span>
+        </a>
+        <a href="wholesale.html">
+            <i class="fas fa-store"></i>
+            <span>Wholesale</span>
+        </a>
+        <a href="about.html" class="active">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Search functionality
+            const searchToggle = document.getElementById('search-toggle');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.getElementById('close-search');
+            const overlayBg = document.getElementById('overlay-bg');
+
+            if (searchToggle && searchOverlay) {
+                searchToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    searchOverlay.classList.add('active');
+                    overlayBg.classList.add('active');
+                });
+
+                closeSearch.addEventListener('click', function() {
+                    searchOverlay.classList.remove('active');
+                    overlayBg.classList.remove('active');
+                });
+            }
+
+            // Cart functionality
+            const cartToggle = document.getElementById('cart-toggle');
+            const miniCart = document.getElementById('mini-cart');
+            const closeCart = document.getElementById('close-cart');
+
+            if (cartToggle && miniCart) {
+                cartToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    miniCart.classList.add('active');
+                    overlayBg.classList.add('active');
+                });
+
+                closeCart.addEventListener('click', function() {
+                    miniCart.classList.remove('active');
+                    overlayBg.classList.remove('active');
+                });
+            }
+
+            // Account functionality
+            const accountToggle = document.getElementById('account-toggle');
+            const accountMenu = document.getElementById('account-menu');
+            const closeAccount = document.getElementById('close-account');
+
+            if (accountToggle && accountMenu) {
+                accountToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    accountMenu.classList.add('active');
+                    overlayBg.classList.add('active');
+                });
+
+                closeAccount.addEventListener('click', function() {
+                    accountMenu.classList.remove('active');
+                    overlayBg.classList.remove('active');
+                });
+            }
+
+            // Close overlays when clicking the background
+            overlayBg.addEventListener('click', function() {
+                searchOverlay.classList.remove('active');
+                miniCart.classList.remove('active');
+                accountMenu.classList.remove('active');
+                overlayBg.classList.remove('active');
+            });
+            
+            // Simple testimonial carousel
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.style.opacity = 0);
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                slides[index].style.opacity = 1;
+                indicators[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 7000);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Ele Coffee Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mini-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo green.png" alt="Ele Coffee Co. Logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wholesale.html">Large Orders</a></li>
+                <li><a href="https://elecoffeeco.mini.store/" target="_blank" class="mini-shop-btn">Shop on Mini</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" id="search-toggle"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon" id="cart-toggle"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="account-icon" id="account-toggle"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search for products..." autofocus>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-suggestions">
+                <h3>Popular Searches</h3>
+                <div class="suggestion-tags">
+                    <a href="products.html">Thakeri Coffee</a>
+                    <a href="products.html">Single Origin</a>
+                    <a href="products.html">Medium Roast</a>
+                    <a href="products.html">Brewing Equipment</a>
+                    <a href="products.html">Gift Sets</a>
+                </div>
+            </div>
+            <button class="close-search" id="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Mini Cart -->
+    <div class="mini-cart" id="mini-cart">
+        <div class="mini-cart-header">
+            <h3>Your Cart <span class="cart-count">0</span></h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Empty cart message -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+            
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₹0.00</span>
+            </div>
+            <a href="#" class="btn checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="account-menu">
+        <div class="account-menu-header">
+            <h3>My Account</h3>
+            <button class="close-account" id="close-account"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="account-menu-content">
+            <div class="account-login">
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Sign In</button>
+                </form>
+                <div class="account-links">
+                    <a href="#">Forgot password?</a>
+                    <a href="#">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay Background -->
+    <div class="overlay-bg" id="overlay-bg"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>Premium Coffee Collection</h1>
+                <p>Discover our handpicked selection of organic coffee beans and ground coffee from Coorg's finest estates.</p>
+            </div>
+        </section>
+
+        <section class="product-filters">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">All Products</option>
+                        <option value="beans">Coffee Beans</option>
+                        <option value="ground">Ground Coffee</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="origin-filter">Origin:</label>
+                    <select id="origin-filter" class="filter-select">
+                        <option value="all">All Origins</option>
+                        <option value="india">India</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="ethiopia">Ethiopia</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="roast-filter">Roast:</label>
+                    <select id="roast-filter" class="filter-select">
+                        <option value="all">All Roasts</option>
+                        <option value="medium">Medium</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-by">Sort By:</label>
+                    <select id="sort-by" class="filter-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="product-grid">
+                <!-- 50gms Coffee Products -->
+                <div class="product-card" data-category="beans" data-origin="India" data-roast="dark" data-aos="fade-up">
+                    <div class="product-image">
+                        <img src="images/ele (1).jpg" alt="Ele Organic Coffee Powder - 50gms">
+                        <div class="product-overlay">
+                            <!-- Shop Now link removed -->
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ele Organic Coffee Powder - 50gms</h3>
+                        <p>Medium Roast, Fruity flavor with dark caramel notes</p>
+                        <div class="product-metadata">
+                            <span class="product-origin">India</span>
+                            <span class="product-origin">Coorg</span>
+                            <span class="product-roast">Medium Roast</span>
+                        </div>
+                        <div class="product-price">₹99</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ground" data-origin="India" data-roast="medium" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="images/beans 3.png" alt="Ele AAA Coffee Beans - 50gms">
+                        <div class="product-overlay">
+                            <!-- Shop Now link removed -->
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ele AAA Coffee Beans - 50gms</h3>
+                        <p>Medium Roast, Fruity flavor and berry notes</p>
+                        <div class="product-metadata">
+                            <span class="product-origin">India</span>
+                            <span class="product-origin">Coorg</span>
+                            <span class="product-roast">Medium Roast</span>
+                        </div>
+                        <div class="product-price">₹90</div>
+                    </div>
+                </div>
+
+                <!-- 150gms Coffee Products -->
+                <div class="product-card" data-category="beans" data-origin="india" data-roast="medium" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <div class="image-gallery">
+                            <img src="images/ele (93).png" alt="Ele Organic Coffee Powder - 150gms" class="active-image">
+                            <img src="images/ele (94).png" alt="Ele Organic Coffee Powder - 150gms" class="gallery-image">
+                            <img src="images/ele (15).png" alt="Ele Organic Coffee Powder - 150gms" class="gallery-image">
+                            <div class="gallery-controls">
+                                <span class="gallery-dot active" data-index="0"></span>
+                                <span class="gallery-dot" data-index="1"></span>
+                                <span class="gallery-dot" data-index="2"></span>
+                            </div>
+                        </div>
+                        <div class="product-overlay">
+                            <!-- Shop Now link removed -->
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ele Organic Coffee Powder - 150gms</h3>
+                        <p>Medium Roast, Fruity flavor with dark caramel notes</p>
+                        <div class="product-metadata">
+                            <span class="product-origin">India</span>
+                            <span class="product-origin">Coorg</span>
+                            <span class="product-roast">Medium Roast</span>
+                        </div>
+                        <div class="product-price">₹270</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beans" data-origin="india" data-roast="medium" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image">
+                        <img src="images/beans 2.png" alt="Ele AAA Coffee Beans - 150gms">
+                        <div class="product-overlay">
+                            <!-- Shop Now link removed -->
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ele AAA Coffee Beans - 150gms</h3>
+                        <p>Medium Roast, Fruity flavor and berry notes</p>
+                        <div class="product-metadata">
+                            <span class="product-origin">India</span>
+                            <span class="product-origin">Coorg</span>
+                            <span class="product-roast">Medium Roast</span>
+                        </div>
+                        <div class="product-price">₹240</div>
+                    </div>
+                </div>
+
+                <!-- 300gms Coffee Products -->
+                <div class="product-card" data-category="beans" data-origin="India" data-roast="medium" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-image">
+                        <div class="image-gallery">
+                            <img src="images/ele (89).png" alt="Ele Organic Coffee Powder - 300gms" class="active-image">
+                            <img src="images/ele (19).png" alt="Ele Organic Coffee Powder - 300gms" class="gallery-image">
+                            <div class="gallery-controls">
+                                <span class="gallery-dot active" data-index="0"></span>
+                                <span class="gallery-dot" data-index="1"></span>
+                            </div>
+                        </div>
+                        <div class="product-overlay">
+                            <!-- Shop Now link removed -->
+                        </div>
+                        <div class="free-shipping-badge">Free Shipping</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ele Organic Coffee Powder - 300gms</h3>
+                        <p>Medium Roast, Fruity flavor with dark caramel notes</p>
+                        <div class="product-metadata">
+                            <span class="product-origin">India</span>
+                            <span class="product-origin">Coorg</span>
+                            <span class="product-roast">Medium Roast</span>
+                        </div>
+                        <div class="product-price">₹500</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beans" data-origin="india" data-roast="medium" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-image">
+                        <img src="images/beans.png" alt="Ele AAA Coffee Beans - 300gms">
+                        <div class="product-overlay">
+                            <!-- Shop Now link removed -->
+                        </div>
+                        <div class="free-shipping-badge">Free Shipping</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ele AAA Coffee Beans - 300gms</h3>
+                        <p>Medium Roast, Fruity flavor and berry notes</p>
+                        <div class="product-metadata">
+                            <span class="product-origin">India</span>
+                            <span class="product-origin">Coorg</span>
+                            <span class="product-roast">Medium Roast</span>
+                        </div>
+                        <div class="product-price">₹420</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Ele Coffee Co.</h3>
+                    <p>Premium coffee beans and powder for coffee enthusiasts.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="products.html">Coffee Beans</a></li>
+                        <li><a href="products.html">Coffee Powder</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ele Coffee Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="products.html" class="active">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Shop</span>
+        </a>
+        <a href="about.html">
+            <i class="fas fa-info-circle"></i>
+            <span>About Us</span>
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="wholesale.html">
+            <i class="fas fa-store"></i>
+            <span>Large Orders</span>
+        </a>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Product filtering functionality
+        const categoryFilter = document.getElementById('category-filter');
+        const originFilter = document.getElementById('origin-filter');
+        const roastFilter = document.getElementById('roast-filter');
+        const sortBy = document.getElementById('sort-by');
+        const productCards = document.querySelectorAll('.product-card');
+
+        function filterProducts() {
+            const categoryValue = categoryFilter.value;
+            const originValue = originFilter.value;
+            const roastValue = roastFilter.value;
+            
+            productCards.forEach(card => {
+                const categoryMatch = categoryValue === 'all' || card.dataset.category === categoryValue;
+                const originMatch = originValue === 'all' || card.dataset.origin === originValue;
+                const roastMatch = roastValue === 'all' || card.dataset.roast === roastValue;
+                
+                if (categoryMatch && originMatch && roastMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function sortProducts() {
+            const sortValue = sortBy.value;
+            const productsGrid = document.querySelector('.product-grid');
+            const productsArray = Array.from(productCards);
+            
+            if (sortValue === 'price-low') {
+                productsArray.sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('₹', ''));
+                    const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('₹', ''));
+                    return priceA - priceB;
+                });
+            } else if (sortValue === 'price-high') {
+                productsArray.sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('₹', ''));
+                    const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('₹', ''));
+                    return priceB - priceA;
+                });
+            } else if (sortValue === 'name-asc') {
+                productsArray.sort((a, b) => {
+                    const nameA = a.querySelector('h3').textContent;
+                    const nameB = b.querySelector('h3').textContent;
+                    return nameA.localeCompare(nameB);
+                });
+            }
+            
+            // Clear current products
+            productsGrid.innerHTML = '';
+            
+            // Re-add sorted products
+            productsArray.forEach(card => {
+                productsGrid.appendChild(card);
+            });
+        }
+
+        categoryFilter.addEventListener('change', filterProducts);
+        originFilter.addEventListener('change', filterProducts);
+        roastFilter.addEventListener('change', filterProducts);
+        sortBy.addEventListener('change', sortProducts);
+    </script>
+</body>
+</html> 

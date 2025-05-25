@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale - Ele Coffee Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mini-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo green.png" alt="Ele Coffee Co. Logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wholesale.html" class="active">Large Orders</a></li>
+                <li><a href="https://elecoffeeco.mini.store/" target="_blank" class="mini-shop-btn">Shop on Mini</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" id="search-toggle"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon" id="cart-toggle"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="account-icon" id="account-toggle"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search for products..." autofocus>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-suggestions">
+                <h3>Popular Searches</h3>
+                <div class="suggestion-tags">
+                    <a href="products.html">Thakeri Coffee</a>
+                    <a href="products.html">Single Origin</a>
+                    <a href="products.html">Medium Roast</a>
+                    <a href="products.html">Brewing Equipment</a>
+                    <a href="products.html">Gift Sets</a>
+                </div>
+            </div>
+            <button class="close-search" id="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Mini Cart -->
+    <div class="mini-cart" id="mini-cart">
+        <div class="mini-cart-header">
+            <h3>Your Cart <span class="cart-count">0</span></h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Empty cart message -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+            
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₹0.00</span>
+            </div>
+            <a href="#" class="btn checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Account Menu -->
+    <div class="account-menu" id="account-menu">
+        <div class="account-menu-header">
+            <h3>My Account</h3>
+            <button class="close-account" id="close-account"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="account-menu-content">
+            <div class="account-login">
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Sign In</button>
+                </form>
+                <div class="account-links">
+                    <a href="#">Forgot password?</a>
+                    <a href="create-account.html">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay Background -->
+    <div class="overlay-bg" id="overlay-bg"></div>
+
+    <main>
+        <section class="page-header wholesale-header">
+            <div class="page-header-content">
+                <h1>Wholesale Solutions</h1>
+                <p>Premium coffee for your café, restaurant, or office.</p>
+            </div>
+        </section>
+
+        <section class="wholesale-intro">
+            <div class="container">
+                <div class="wholesale-intro-content">
+                    <h2>Why Choose Ele Coffee for Your Business?</h2>
+                    <p>At Ele Coffee Company, we understand that serving exceptional coffee can set your business apart. Our wholesale program is designed to give your customers or employees the perfect cup every time, with personalized support at every step.</p>
+                    <p>We would love to work with cafés, restaurants, hotels, offices, and specialty shops to provide high-quality coffee products, training, and equipment at competitive prices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-benefits">
+            <div class="container">
+                <h2>Our Wholesale Benefits</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mug-hot" style="color: #ffb812;"></i>
+                        </div>
+                        <h3>Premium Quality</h3>
+                        <p>Ethically sourced, freshly roasted coffee beans from the finest growing regions in India.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-truck" style="color: #ffb812;"></i>
+                        </div>
+                        <h3>Flexible Delivery</h3>
+                        <p>Scheduled deliveries to ensure you never run out of fresh coffee.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rupee-sign" style="color: #ffb812;"></i>
+                        </div>
+                        <h3>Competitive Pricing</h3>
+                        <p>Volume discounts and pricing structures tailored to your business needs.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap" style="color: #ffb812;"></i>
+                        </div>
+                        <h3>Training & Support</h3>
+                        <p>Barista training and ongoing support to ensure quality in every cup.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-box-open" style="color: #ffb812;"></i>
+                        </div>
+                        <h3>Custom Packaging</h3>
+                        <p>Options for private labeling and custom packaging for your business.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-tie" style="color: #ffb812;"></i>
+                        </div>
+                        <h3>Dedicated Account Manager</h3>
+                        <p>Your personal contact for orders, questions, and support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-products">
+            <div class="container">
+                <h2>Wholesale Products</h2>
+                <div class="wholesale-product-grid">
+                    <div class="wholesale-product">
+                        <h3>Coffee Beans</h3>
+                        <ul>
+                            <li>Single-origin beans from Coorg, Karnataka</li>
+                            <li>Custom blends created for your specific needs</li>
+                            <li>Available in 50gms, 150gms, and 300gms bags</li>
+                            <li>Light, medium, and dark roast options</li>
+                        </ul>
+                    </div>
+                    <div class="wholesale-product">
+                        <h3>Ground Coffee</h3>
+                        <ul>
+                            <li>Custom ground for various brewing methods</li>
+                            <li>Packaged in vacuum-sealed bags for maximum freshness</li>
+                            <li>Available in 50gms, 150gms, and 300gms quantities</li>
+                            <li>Consistent quality and flavor profile</li>
+                        </ul>
+                    </div>
+                    <div class="wholesale-product">
+                        <h3>Equipment & Supplies</h3>
+                        <ul>
+                            <li>Commercial espresso machines and grinders</li>
+                            <li>Brewing equipment for pour-over, French press, etc.</li>
+                            <li>Cups, lids, sleeves, and other accessories</li>
+                            <li>Maintenance and cleaning supplies</li>
+                        </ul>
+                    </div>
+                    <div class="wholesale-product">
+                        <h3>Training & Consultation</h3>
+                        <ul>
+                            <li>Barista training for your staff</li>
+                            <li>Menu development consultation</li>
+                            <li>Workflow and setup recommendations</li>
+                            <li>Equipment maintenance training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-testimonials">
+            <div class="container">
+                <h2>What Our Wholesale Partners Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="stars">★★★★★</div>
+                        <p>"Ele Coffee has been our supplier for over a year now. Their consistent quality and reliable delivery have made them an invaluable partner for our resort."</p>
+                        <div class="customer-name">- Joseph, Bell Farms, Kerala</div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stars">★★★★★</div>
+                        <p>"The team at Ele Coffee worked with us to create a custom blend for our milkshakes that our customers absolutely love. Their expertise and flexibility make them a pleasure to work with."</p>
+                        <div class="customer-name">- Aldrin Raju, Smooj's, Bangalore</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-contact">
+            <div class="container">
+                <h2>Get Started with Wholesale</h2>
+                <p>Fill out the form below, and our wholesale team will contact you within one business day to discuss your needs.</p>
+                <form class="wholesale-form">
+                    <div class="form-group">
+                        <label for="business-name">Business Name*</label>
+                        <input type="text" id="business-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-type">Business Type*</label>
+                        <select id="business-type" required>
+                            <option value="">Please select</option>
+                            <option value="cafe">Café</option>
+                            <option value="restaurant">Restaurant</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="office">Office</option>
+                            <option value="retail">Retail Shop</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name">Contact Name*</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email*</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone">Phone*</label>
+                        <input type="tel" id="contact-phone" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address">Business Address</label>
+                        <input type="text" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <input type="text" id="state">
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">Pincode</label>
+                        <input type="text" id="zip">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" value="India">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="estimated-volume">Estimated Monthly Volume</label>
+                        <select id="estimated-volume">
+                            <option value="">Please select</option>
+                            <option value="2-5kg">2-5 kg</option>
+                            <option value="5-10kg">5-10 kg</option>
+                            <option value="10-25kg">10-25 kg</option>
+                            <option value="25-45kg">25-45 kg</option>
+                            <option value="45kg+">45+ kg</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" rows="5" placeholder="Tell us more about your business and coffee needs..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <a href="https://wa.me/919380926260?text=Wholesale%20Inquiry%3A%20" class="btn" style="margin-right: 10px;"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
+                        <a href="mailto:Hello@elecoffee.in?subject=Wholesale%20Inquiry" class="btn"><i class="fas fa-envelope"></i> Contact via Email</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="wholesale-faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What are your minimum order requirements?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our standard minimum order for wholesale is 1 kg of coffee per order. However, we're flexible and can discuss options based on your specific business needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How often do you deliver?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer flexible delivery options, including weekly, bi-weekly, and monthly schedules. We'll work with you to establish a delivery cadence that ensures you always have fresh coffee without excess inventory.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer private labeling?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer private labeling options for businesses looking to sell coffee under their own brand. This service includes custom packaging design and labeling. Minimum order quantities apply for this service.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What training do you provide?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer comprehensive training programs for your staff, including basic barista skills, latte art, equipment maintenance, and coffee knowledge. Training can be conducted at your location or at our training facility.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can you help with equipment selection and setup?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We provide consultation on equipment selection based on your space, volume, and budget. We can also assist with installation and setup to ensure optimal performance.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer custom blends?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we can create custom blends tailored to your taste preferences and business needs. Our roasting team will work with you to develop a unique profile that you can call your own.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Ele Coffee Co.</h3>
+                <p>Premium coffee beans and powder for coffee enthusiasts.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">Coffee Beans</a></li>
+                    <li><a href="products.html">Coffee Powder</a></li>
+                    <li><a href="wholesale.html">Wholesale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Ele Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="products.html">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Shop</span>
+        </a>
+        <a href="wholesale.html" class="active">
+            <i class="fas fa-store"></i>
+            <span>Wholesale</span>
+        </a>
+        <a href="about.html">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // FAQ Toggles
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle');
+            
+            question.addEventListener('click', () => {
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherToggle = otherItem.querySelector('.faq-toggle');
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        
+                        otherAnswer.classList.remove('active');
+                        otherToggle.classList.remove('active');
+                        otherQuestion.classList.remove('active');
+                        otherToggle.innerHTML = '<i class="fas fa-plus"></i>';
+                    }
+                });
+                
+                // Toggle current FAQ item
+                answer.classList.toggle('active');
+                toggle.classList.toggle('active');
+                question.classList.toggle('active');
+                toggle.innerHTML = answer.classList.contains('active') 
+                    ? '<i class="fas fa-minus"></i>' 
+                    : '<i class="fas fa-plus"></i>';
+            });
+        });
+        
+        // Form Submission
+        const wholesaleForm = document.querySelector('.wholesale-form');
+        
+        if (wholesaleForm) {
+            wholesaleForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Get form values
+                const businessName = document.getElementById('business-name').value;
+                const businessType = document.getElementById('business-type').value;
+                const contactName = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const phone = document.getElementById('contact-phone').value;
+                const address = document.getElementById('address').value;
+                const city = document.getElementById('city').value;
+                const state = document.getElementById('state').value;
+                const zip = document.getElementById('zip').value;
+                const country = document.getElementById('country').value;
+                const volume = document.getElementById('estimated-volume').value;
+                const message = document.getElementById('message').value;
+                
+                // Create WhatsApp message
+                const whatsappBtn = wholesaleForm.querySelector('a[href^="https://wa.me"]');
+                if (whatsappBtn) {
+                    const whatsappText = `Wholesale Inquiry from ${businessName} (${businessType})\nContact: ${contactName}\nPhone: ${phone}\nEstimated Volume: ${volume}\n\n${message}`;
+                    const encodedText = encodeURIComponent(whatsappText);
+                    whatsappBtn.href = `https://wa.me/919380926260?text=${encodedText}`;
+                }
+                
+                // Create Email message
+                const emailBtn = wholesaleForm.querySelector('a[href^="mailto"]');
+                if (emailBtn) {
+                    const emailSubject = encodeURIComponent(`Wholesale Inquiry: ${businessName}`);
+                    const emailBody = encodeURIComponent(
+                        `Business Name: ${businessName}\n` +
+                        `Business Type: ${businessType}\n` +
+                        `Contact Name: ${contactName}\n` +
+                        `Email: ${email}\n` +
+                        `Phone: ${phone}\n` +
+                        `Address: ${address}, ${city}, ${state}, ${zip}, ${country}\n` +
+                        `Estimated Monthly Volume: ${volume}\n\n` +
+                        `${message}`
+                    );
+                    emailBtn.href = `mailto:Hello@elecoffee.in?subject=${emailSubject}&body=${emailBody}`;
+                }
+                
+                // Show form filled notification
+                showNotification('Choose your preferred contact method above');
+            });
+        }
+
+        // Search, Cart, and Account functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchToggle = document.getElementById('search-toggle');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.getElementById('close-search');
+            const overlayBg = document.getElementById('overlay-bg');
+
+            if (searchToggle && searchOverlay) {
+                searchToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    searchOverlay.classList.add('active');
+                    overlayBg.classList.add('active');
+                });
+
+                closeSearch.addEventListener('click', function() {
+                    searchOverlay.classList.remove('active');
+                    overlayBg.classList.remove('active');
+                });
+            }
+
+            // Cart functionality
+            const cartToggle = document.getElementById('cart-toggle');
+            const miniCart = document.getElementById('mini-cart');
+            const closeCart = document.getElementById('close-cart');
+
+            if (cartToggle && miniCart) {
+                cartToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    miniCart.classList.add('active');
+                    overlayBg.classList.add('active');
+                });
+
+                closeCart.addEventListener('click', function() {
+                    miniCart.classList.remove('active');
+                    overlayBg.classList.remove('active');
+                });
+            }
+
+            // Account functionality
+            const accountToggle = document.getElementById('account-toggle');
+            const accountMenu = document.getElementById('account-menu');
+            const closeAccount = document.getElementById('close-account');
+
+            if (accountToggle && accountMenu) {
+                accountToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    accountMenu.classList.add('active');
+                    overlayBg.classList.add('active');
+                });
+
+                closeAccount.addEventListener('click', function() {
+                    accountMenu.classList.remove('active');
+                    overlayBg.classList.remove('active');
+                });
+            }
+
+            // Close overlays when clicking the background
+            overlayBg.addEventListener('click', function() {
+                searchOverlay.classList.remove('active');
+                miniCart.classList.remove('active');
+                accountMenu.classList.remove('active');
+                overlayBg.classList.remove('active');
+            });
+        });
+    </script>
+    
+    <style>
+        /* Improved FAQ section styling */
+        .faq-item {
+            margin-bottom: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            overflow: hidden;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .faq-question {
+            padding: 18px 24px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f7f0;
+            color: #006827;
+        }
+        
+        .faq-question.active {
+            background-color: #f0f7f0;
+            color: #006827;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,104,39,0.1);
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e1f0e1;
+            border-radius: 50%;
+            color: #006827;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-toggle.active {
+            transform: rotate(180deg);
+            background-color: #006827;
+            color: #fff;
+        }
+        
+        .faq-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-out;
+            background-color: #fff;
+        }
+        
+        .faq-answer.active {
+            padding: 20px 24px;
+            max-height: 1000px;
+            opacity: 1;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+    </style>
+</body>
+</html> 
